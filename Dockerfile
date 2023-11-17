@@ -6,8 +6,8 @@ RUN apk update \
     && apk upgrade \
     && apk add \
     tzdata \
-    mariadb=10.6.12-r0 \
-    mariadb-client=10.6.12-r0 \
+    mariadb \
+    mariadb-client \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     && apk del tzdata \

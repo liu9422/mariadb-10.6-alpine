@@ -2,18 +2,18 @@
 
 > Alpine：3.15 
 
-> MariaDB：10.6.2
+> MariaDB：10.6.14
 
 用于个人测试部署或小型应用
 
 ## 使用方式
 
 ```shell
-docker pull liuchengjun94222/mariadb-10.6.2-alpine:latest
+docker pull liuchengjun94222/mariadb-10.6.14-alpine:latest
 ```
 或直接clone本项目后在本地构建
 ```shell
-docker build -t mariadb-10.6.2-alpine .
+docker build -t mariadb-10.6.14-alpine .
 ```
 
 ### 创建镜像
@@ -29,5 +29,5 @@ docker run -itd \
     -e MYSQL_DATABASE_BACKUP_CLEANUP_CRON="7" \  # 初始化数据库的清理备份数据任务时间，单位为天，超过该时间备份文件被删除
     -v /mysql_data:/var/lib/mysql \   # 将主机/mysql_data挂载到容器的/var/lib/mysql，当/mysql_data存在数据文件时将不再进行数据库初始化工作
     -v /mysql_backup_data:/backup_data \  # 将主机/mysql_backup_data挂载到容器的/backup_data，保存备份的数据文件
-    mariadb-10.6.2-alpine
+    mariadb-10.6.14-alpine
 ```
